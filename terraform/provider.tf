@@ -1,12 +1,11 @@
-# PROVIDER
 terraform {
   required_version = "~> 1.12.2"
 
   backend "s3" {
-    bucket         = "aws-virtual-machine-nickolas-corazza"  # seu bucket já criado
-    key            = "tfstate/terraform.tfstate"             # caminho dentro do bucket
-    region         = "us-east-1"
-    encrypt        = true
+    bucket  = "aws-virtual-machine-nickolas-corazza"
+    key     = "tfstate/terraform.tfstate"
+    region  = "us-east-1"
+    encrypt = true
   }
 
   required_providers {
