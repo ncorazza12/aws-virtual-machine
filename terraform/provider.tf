@@ -1,6 +1,4 @@
-# PROVIDER
 terraform {
-
   required_version = "~> 1.12.2"
 
   required_providers {
@@ -10,6 +8,12 @@ terraform {
     }
   }
 
+  backend "s3" {
+    bucket         = "bucket-do-nickolas-para-vm"
+    key            = "terraform.tfstate"
+    region         = "us-east-1"
+    profile        = "iac"
+  }
 }
 
 provider "aws" {
